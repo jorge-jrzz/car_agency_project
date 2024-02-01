@@ -3,7 +3,6 @@ from sign_in import sign_in
 from sign_up import sign_up
 
 
-# this function describes the way to render the page, passing the whole data
 def main(page: ft.Page):
     page.title = "Proyecto final"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -14,7 +13,13 @@ def main(page: ft.Page):
         page.add(sign_up)
         page.update()
 
+    def identify(e):
+        page.clean()
+        page.add(sign_in)
+        page.update()
+
     sign_in.content.controls[1].content.controls[3].on_click = register
+    sign_up.content.controls[0].content.controls[0].on_click = identify
     page.add(sign_in)
 
     # def page_resize(e):

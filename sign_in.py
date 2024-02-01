@@ -1,10 +1,16 @@
 import flet as ft
 
+login = {"user": "", "password": ""}
+
 
 def sesion(e):
+    global login
     user = form.content.controls[0].value
     password = form.content.controls[1].value
-    print(f"User: {user}, Password: {password}")
+    if user != "" and password != "":
+        login["user"] = user
+        login["password"] = password
+        print(login)
 
 
 title = ft.Container(
