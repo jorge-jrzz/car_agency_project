@@ -2,7 +2,7 @@ import flet as ft
 
 
 login = {"user": "", "password": ""}
-admin = True
+admin = False
 
 def sesion(e):
 
