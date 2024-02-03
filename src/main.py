@@ -18,7 +18,7 @@ def main(page: ft.Page):
         page.add(sign_in)
         page.update()
 
-    sign_in.content.controls[1].content.controls[3].on_click = register
+    sign_in.content.controls[1].content.controls[4].on_click = register
     sign_up.content.controls[0].content.controls[0].on_click = identify
     page.add(sign_in)
 

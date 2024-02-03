@@ -1,16 +1,23 @@
 import flet as ft
 
-login = {"user": "", "password": ""}
 
+login = {"user": "", "password": ""}
+admin = True
 
 def sesion(e):
+
     global login
+    global admin
+
     user = form.content.controls[0].value
     password = form.content.controls[1].value
+    admin = form.content.controls[3].content.controls[1].value
+
     if user != "" and password != "":
         login["user"] = user
         login["password"] = password
         print(login)
+        print(admin)
 
 
 title = ft.Container(
@@ -25,10 +32,30 @@ buttom_submit = ft.Container(
     alignment=ft.Alignment(0, 0),
 )
 
+client_or_admin = ft.Container(
+    content=ft.Row(
+        controls=[
+            ft.Text("Cliente", weight=ft.FontWeight.W_600), 
+            ft.Switch(value=False, 
+                      active_color="#CCCCCC", 
+                      thumb_color={
+                          ft.MaterialState.SELECTED: ft.colors.WHITE,
+                          ft.MaterialState.DEFAULT: ft.colors.BLACK,
+                        },  
+                      thumb_icon={
+                          ft.MaterialState.SELECTED: ft.icons.ADMIN_PANEL_SETTINGS,
+                          ft.MaterialState.DEFAULT: ft.icons.PERSON
+                        }
+            ), 
+            ft.Text("Admin", weight=ft.FontWeight.W_600)
+        ], 
+        alignment=ft.MainAxisAlignment.CENTER
+    )
+)
+
 new_user = ft.Container(
-    ft.Text("Crea una cuenta"),
+    ft.Text("Crea una cuenta", weight=ft.FontWeight.BOLD),
     alignment=ft.Alignment(0, 0),
-    padding=ft.padding.only(top=45),
 )
 
 form = ft.Container(
@@ -39,13 +66,14 @@ form = ft.Container(
             ft.TextField(label="Password", password=True,
                          can_reveal_password=True, icon=ft.icons.PASSWORD_ROUNDED),
             buttom_submit,
+            client_or_admin,
             new_user
         ],
         spacing=30
     ),
-    bgcolor="#E8EBF7",
+    bgcolor="#97D8C4",
     width=360,
-    height=350,
+    height=370,
     padding=ft.padding.all(25),
     border_radius=10,
 )
