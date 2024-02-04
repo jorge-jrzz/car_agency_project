@@ -33,9 +33,6 @@ def main(page: ft.Page):
     def schedule_service(e):
         del main_content.content.controls[2]
         main_content.content.controls.append(buttons_schedule)
-
-        # main_content.content.controls.append(date_button)
-        # main_content.content.controls.append(time_button)
         page.update()
 
     sign_in.content.controls[1].content.controls[4].on_click = register
