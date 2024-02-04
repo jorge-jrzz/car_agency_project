@@ -2,6 +2,7 @@ import flet as ft
 from pages.sign_in import sign_in
 from pages.sign_up import sign_up
 from pages.home_page_client import main_content, from_car, date_picker, time_picker, buttons_schedule
+from pages.home_page_admin import dates_table
 
 
 def main(page: ft.Page):
@@ -41,7 +42,8 @@ def main(page: ft.Page):
     main_content.content.controls[0].on_change = add_car
     main_content.content.controls[0].leading.on_click = schedule_service
 
-    page.add(sign_in)
+    # page.add(sign_in)
+    page.add(dates_table)
     page.overlay.append(date_picker)
     page.overlay.append(time_picker)
 
