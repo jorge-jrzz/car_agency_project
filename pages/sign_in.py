@@ -29,7 +29,8 @@ title = ft.Container(
 
 buttom_submit = ft.Container(
     content=ft.ElevatedButton(
-        text="Iniciar sesión", width=220, height=35, color="black", on_click=sesion),
+        # text="Iniciar sesión", width=220, height=35, color="black", on_click=sesion),
+        text="Iniciar sesión", width=220, height=35, color="black"),
     alignment=ft.Alignment(0, 0),
 )
 

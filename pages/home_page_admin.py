@@ -1,23 +1,26 @@
 import flet as ft
 
+# Add date
+# def change_date(e):
+#     print(f"Date picker changed, value is {date_picker.value}")
 
-def open_give_price(e):
-    page.dialog = give_price
-    give_price.open = True
-    page.update()
+# def date_picker_dismissed(e):
+#     print(f"Date picker dismissed, value is {date_picker.value}")
 
+# date_picker = ft.DatePicker(
+#     on_change=change_date,
+#     on_dismiss=date_picker_dismissed,
+#     first_date=datetime.datetime(2023, 10, 1),
+#     last_date=datetime.datetime(2024, 10, 1),
+# )
 
-def cancel_price(e):
-    give_price.open = False
-    page.update()
+# date_button = ft.ElevatedButton(
+#     "Pick date",
+#     icon=ft.icons.CALENDAR_MONTH,
+#     on_click=lambda _: date_picker.pick_date(),
+# )
 
-
-def confirm_price(e):
-    give_price.open = False
-    price = give_price.content.controls[1].value
-    dates_table.rows[0].cells[6].content.value = price
-    print(price)
-    page.update()
+# page.overlay.append(date_picker)
 
 
 edit_price = ft.IconButton(
@@ -25,7 +28,6 @@ edit_price = ft.IconButton(
     icon_color="green",
     icon_size=20,
     tooltip="Ingresa el precio del servicio",
-    on_click=open_give_price
 )
 
 give_price = ft.AlertDialog(
@@ -38,8 +40,8 @@ give_price = ft.AlertDialog(
         ]
     ),
     actions=[
-        ft.TextButton("Confirmar", on_click=confirm_price),
-        ft.TextButton("Cancelar", on_click=cancel_price),
+        ft.TextButton("Confirmar"),
+        ft.TextButton("Cancelar"),
     ],
     actions_alignment=ft.MainAxisAlignment.END,
     on_dismiss=lambda e: print("Modal dialog dismissed!"),
