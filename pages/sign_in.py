@@ -4,6 +4,7 @@ import flet as ft
 login = {"user": "", "password": ""}
 admin = False
 
+
 def sesion(e):
 
     global login
@@ -35,20 +36,20 @@ buttom_submit = ft.Container(
 client_or_admin = ft.Container(
     content=ft.Row(
         controls=[
-            ft.Text("Cliente", weight=ft.FontWeight.W_600), 
-            ft.Switch(value=False, 
-                      active_color="#CCCCCC", 
+            ft.Text("Cliente", weight=ft.FontWeight.W_600),
+            ft.Switch(value=False,
+                      active_color="#CCCCCC",
                       thumb_color={
                           ft.MaterialState.SELECTED: ft.colors.WHITE,
                           ft.MaterialState.DEFAULT: ft.colors.BLACK,
-                        },  
+                      },
                       thumb_icon={
                           ft.MaterialState.SELECTED: ft.icons.ADMIN_PANEL_SETTINGS,
                           ft.MaterialState.DEFAULT: ft.icons.PERSON
-                        }
-            ), 
+                      }
+                      ),
             ft.Text("Admin", weight=ft.FontWeight.W_600)
-        ], 
+        ],
         alignment=ft.MainAxisAlignment.CENTER
     )
 )
