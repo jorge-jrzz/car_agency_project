@@ -43,11 +43,12 @@ give_price = ft.AlertDialog(
         controls=[
             ft.Text("Ingresa el precio del servicio"),
             ft.TextField(label="money")
-        ]
+        ],
+        height=100
     ),
     actions=[
-        ft.TextButton("Confirmar"),
         ft.TextButton("Cancelar"),
+        ft.TextButton("Confirmar"),
     ],
     actions_alignment=ft.MainAxisAlignment.END,
     on_dismiss=lambda e: print("Modal dialog dismissed!"),

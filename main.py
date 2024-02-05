@@ -1,7 +1,7 @@
 import flet as ft
 from pages.sign_in import sign_in
 from pages.sign_up import sign_up
-from pages.home_page_client import main_content, from_car, date_picker, time_picker, buttons_schedule
+from pages.home_page_client import home_page_client, from_car, date_picker, time_picker, buttons_schedule
 from pages.home_page_admin import home_page_admin, give_price, edit_price
 
 
@@ -25,12 +25,11 @@ def main(page: ft.Page):
             page.update()
         elif door:
             page.clean()
-            page.add(main_content)
+            page.add(home_page_client)
             page.update()
 
 
 # Carga la pagina para registrarse
-
 
     def register(e):
         page.clean()
@@ -41,7 +40,6 @@ def main(page: ft.Page):
 
 # Carga la pagina para iniciar sesion
 
-
     def identify(e):
         page.clean()
         page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -51,22 +49,19 @@ def main(page: ft.Page):
 
 # Carga el formulario para registrar un nuevo carro del cliente
 
-
     def add_car(e):
-        main_content.content.controls[2] = from_car
+        home_page_client.content.controls[2] = from_car
         page.update()
 
 
 # Carga el formulario para registrar una cita para servicio del carro
 
-
     def schedule_service(e):
-        main_content.content.controls[2] = buttons_schedule
+        home_page_client.content.controls[2] = buttons_schedule
         page.update()
 
 
 # Abre el diaogo para agregar o modificar el precio de determinado servicio
-
 
     def open_give_price(e):
         page.dialog = give_price
@@ -76,14 +71,12 @@ def main(page: ft.Page):
 
 # Cierra el dialogo para ingresar el precio
 
-
     def cancel_price(e):
         give_price.open = False
         page.update()
 
 
 # Cierra y confirma el precio del servicio
-
 
     def confirm_price(e):
         give_price.open = False
@@ -100,19 +93,19 @@ def main(page: ft.Page):
     sign_up.content.controls[0].content.controls[0].on_click = identify
 
 # Cambio entre el formulario de agregar un carro al usuario y egendar una cita para servicio
-    main_content.content.controls[0].on_change = add_car
-    main_content.content.controls[0].leading.on_click = schedule_service
+    home_page_client.content.controls[0].on_change = add_car
+    home_page_client.content.controls[0].leading.on_click = schedule_service
 
 # Cerrar sesión desde el home page del cliente
-    main_content.content.controls[3].content.on_click = identify
+    home_page_client.content.controls[3].content.on_click = identify
 
 # Cerrar sesión desde el home page del Administrador
     home_page_admin.content.controls[1].content.on_click = identify
 
 # Edicion de precio en la pagina del administrador
     edit_price.on_click = open_give_price
-    give_price.actions[1].on_click = cancel_price
-    give_price.actions[0].on_click = confirm_price
+    give_price.actions[0].on_click = cancel_price
+    give_price.actions[1].on_click = confirm_price
 
     page.add(sign_in)
     # page.add(dates_table)

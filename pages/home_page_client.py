@@ -115,7 +115,7 @@ from_car = ft.Container(
 )
 
 
-main_content = ft.Container(
+home_page_client = ft.Container(
     content=ft.Row(
         controls=[
             rail,
