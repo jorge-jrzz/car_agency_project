@@ -62,7 +62,7 @@ form = ft.Container(
         ],
         spacing=15
     ),
-    bgcolor="#E8EBF7",
+    bgcolor="#DBDFE6",
     width=470,
     height=450,
     # height=570,

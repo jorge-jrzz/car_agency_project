@@ -74,7 +74,7 @@ form = ft.Container(
         ],
         spacing=30
     ),
-    bgcolor="#97D8C4",
+    bgcolor="#DBDFE6",
     width=360,
     height=370,
     padding=ft.padding.all(25),
