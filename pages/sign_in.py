@@ -56,7 +56,8 @@ client_or_admin = ft.Container(
 )
 
 new_user = ft.Container(
-    ft.Text("Crea una cuenta", weight=ft.FontWeight.BOLD),
+    ft.TextButton(text="Crea una cuenta", style=ft.ButtonStyle(
+        color="black", bgcolor=None, overlay_color="#C0BEC6")),
     alignment=ft.Alignment(0, 0),
 )
 

@@ -76,7 +76,14 @@ buttons_schedule = ft.Container(
             time_button
         ]
     ),
-    alignment=ft.Alignment(-1, -1)
+    alignment=ft.Alignment(1, -1)
+)
+
+log_out = ft.Container(
+    content=ft.TextButton(text="Cerrar sesión", style=ft.ButtonStyle(
+        color="black", bgcolor=None, overlay_color=ft.colors.RED_500)),
+    alignment=ft.Alignment(1, -1),
+    expand=True
 )
 
 
@@ -113,7 +120,8 @@ main_content = ft.Container(
         controls=[
             rail,
             ft.VerticalDivider(width=1),
-            ft.Text("Body")
+            ft.Text(""),
+            log_out
         ]
     ),
     expand=True

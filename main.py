@@ -26,34 +26,53 @@ def main(page: ft.Page):
             page.add(main_content)
             page.update()
 
+
+# Carga la pagina para registrarse
+
     def register(e):
         page.clean()
         page.add(sign_up)
         page.update()
+
+
+# Carga la pagina para iniciar sesion
 
     def identify(e):
         page.clean()
         page.add(sign_in)
         page.update()
 
+
+# Carga el formulario para registrar un nuevo carro del cliente
+
     def add_car(e):
-        del main_content.content.controls[2]
-        main_content.content.controls.append(from_car)
+        main_content.content.controls[2] = from_car
         page.update()
 
+
+# Carga el formulario para registrar una cita para servicio del carro
+
     def schedule_service(e):
-        del main_content.content.controls[2]
-        main_content.content.controls.append(buttons_schedule)
+        main_content.content.controls[2] = buttons_schedule
         page.update()
+
+
+# Abre el diaogo para agregar o modificar el precio de determinado servicio
 
     def open_give_price(e):
         page.dialog = give_price
         give_price.open = True
         page.update()
 
+
+# Cierra el dialogo para ingresar el precio
+
     def cancel_price(e):
         give_price.open = False
         page.update()
+
+
+# Cierra y confirma el precio del servicio
 
     def confirm_price(e):
         give_price.open = False
@@ -66,12 +85,15 @@ def main(page: ft.Page):
     sign_in.content.controls[1].content.controls[2].content.on_click = god
 
 # Cambio entre las paginas de registro e iniciar secion
-    sign_in.content.controls[1].content.controls[4].on_click = register
+    sign_in.content.controls[1].content.controls[4].content.on_click = register
     sign_up.content.controls[0].content.controls[0].on_click = identify
 
 # Cambio entre el formulario de agregar un carro al usuario y egendar una cita para servicio
     main_content.content.controls[0].on_change = add_car
     main_content.content.controls[0].leading.on_click = schedule_service
+
+# Cerrar sesión desde el home page del cliente
+    main_content.content.controls[3].content.on_click = identify
 
 # Edicion de precio en la pagina del administrador
     edit_price.on_click = open_give_price
