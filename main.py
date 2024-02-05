@@ -38,6 +38,7 @@ def main(page: ft.Page):
 
 # Carga la pagina para registrarse
 
+
     def register(e):
         page.clean()
         page.vertical_alignment = ft.MainAxisAlignment.NONE
@@ -46,6 +47,7 @@ def main(page: ft.Page):
 
 
 # Carga la pagina para iniciar sesion
+
 
     def identify(e):
         page.clean()
@@ -56,6 +58,7 @@ def main(page: ft.Page):
 
 # Carga el formulario para registrar un nuevo carro del cliente (home page client)
 
+
     def add_car(e):
         home_page_client.content.controls[2] = from_car
         page.update()
@@ -63,12 +66,14 @@ def main(page: ft.Page):
 
 # Carga el formulario para registrar una cita para servicio del carro (home page client)
 
+
     def schedule_service(e):
         home_page_client.content.controls[2] = buttons_schedule
         page.update()
 
 
 # Abre el diaogo para agregar o modificar el precio de determinado servicio (home page admin)
+
 
     def open_give_price(e):
         page.dialog = give_price
@@ -78,12 +83,14 @@ def main(page: ft.Page):
 
 # Cierra el dialogo para ingresar el precio (home page admin)
 
+
     def cancel_price(e):
         give_price.open = False
         page.update()
 
 
 # Cierra y confirma el precio del servicio (home page admin)
+# La idea es que tambien se obtenga el ID del servicio/cita para guardar en la DB el precio de esa cita en especifico en esta función
 
     def confirm_price(e):
         give_price.open = False
@@ -106,6 +113,7 @@ def main(page: ft.Page):
         page.update()
 
 # Cierra y confirma el status del servicio (home page secretary)
+# La idea es que tambien se obtenga el ID del servicio/cita para guardar en la DB el status de esa cita en especifico en esta función
 
     def confirm_status(e):
         give_status.open = False

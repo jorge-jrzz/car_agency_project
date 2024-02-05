@@ -1,26 +1,5 @@
 import flet as ft
 
-# Add date
-# def change_date(e):
-#     print(f"Date picker changed, value is {date_picker.value}")
-
-# def date_picker_dismissed(e):
-#     print(f"Date picker dismissed, value is {date_picker.value}")
-
-# date_picker = ft.DatePicker(
-#     on_change=change_date,
-#     on_dismiss=date_picker_dismissed,
-#     first_date=datetime.datetime(2023, 10, 1),
-#     last_date=datetime.datetime(2024, 10, 1),
-# )
-
-# date_button = ft.ElevatedButton(
-#     "Pick date",
-#     icon=ft.icons.CALENDAR_MONTH,
-#     on_click=lambda _: date_picker.pick_date(),
-# )
-
-# page.overlay.append(date_picker)
 
 log_out = ft.Container(
     content=ft.TextButton(text="Cerrar sesión", style=ft.ButtonStyle(
@@ -42,7 +21,7 @@ give_price = ft.AlertDialog(
     content=ft.Column(
         controls=[
             ft.Text("Ingresa el precio del servicio"),
-            ft.TextField(label="money")
+            ft.TextField(label="Precio", prefix="$ ")
         ],
         height=100
     ),
