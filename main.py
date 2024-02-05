@@ -2,13 +2,14 @@ import flet as ft
 from pages.sign_in import sign_in
 from pages.sign_up import sign_up
 from pages.home_page_client import main_content, from_car, date_picker, time_picker, buttons_schedule
-from pages.home_page_admin import dates_table, give_price, edit_price
+from pages.home_page_admin import home_page_admin, give_price, edit_price
 
 
 def main(page: ft.Page):
     page.title = "Proyecto final"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.theme_mode = ft.ThemeMode.LIGHT
+    page.window_full_screen = True
 
     def god(e):
         user = sign_in.content.controls[1].content.controls[0].value
@@ -19,7 +20,8 @@ def main(page: ft.Page):
         print(door)
         if door and admin:
             page.clean()
-            page.add(dates_table)
+            page.vertical_alignment = ft.MainAxisAlignment.NONE
+            page.add(home_page_admin)
             page.update()
         elif door:
             page.clean()
@@ -29,21 +31,26 @@ def main(page: ft.Page):
 
 # Carga la pagina para registrarse
 
+
     def register(e):
         page.clean()
+        page.vertical_alignment = ft.MainAxisAlignment.NONE
         page.add(sign_up)
         page.update()
 
 
 # Carga la pagina para iniciar sesion
 
+
     def identify(e):
         page.clean()
+        page.vertical_alignment = ft.MainAxisAlignment.CENTER
         page.add(sign_in)
         page.update()
 
 
 # Carga el formulario para registrar un nuevo carro del cliente
+
 
     def add_car(e):
         main_content.content.controls[2] = from_car
@@ -52,12 +59,14 @@ def main(page: ft.Page):
 
 # Carga el formulario para registrar una cita para servicio del carro
 
+
     def schedule_service(e):
         main_content.content.controls[2] = buttons_schedule
         page.update()
 
 
 # Abre el diaogo para agregar o modificar el precio de determinado servicio
+
 
     def open_give_price(e):
         page.dialog = give_price
@@ -67,6 +76,7 @@ def main(page: ft.Page):
 
 # Cierra el dialogo para ingresar el precio
 
+
     def cancel_price(e):
         give_price.open = False
         page.update()
@@ -74,10 +84,11 @@ def main(page: ft.Page):
 
 # Cierra y confirma el precio del servicio
 
+
     def confirm_price(e):
         give_price.open = False
         price = give_price.content.controls[1].value
-        dates_table.rows[0].cells[6].content.value = price
+        home_page_admin.content.controls[0].rows[0].cells[6].content.value = price
         print(price)
         page.update()
 
@@ -94,6 +105,9 @@ def main(page: ft.Page):
 
 # Cerrar sesión desde el home page del cliente
     main_content.content.controls[3].content.on_click = identify
+
+# Cerrar sesión desde el home page del Administrador
+    home_page_admin.content.controls[1].content.on_click = identify
 
 # Edicion de precio en la pagina del administrador
     edit_price.on_click = open_give_price

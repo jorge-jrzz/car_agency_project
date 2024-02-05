@@ -22,6 +22,12 @@ import flet as ft
 
 # page.overlay.append(date_picker)
 
+log_out = ft.Container(
+    content=ft.TextButton(text="Cerrar sesión", style=ft.ButtonStyle(
+        color="black", bgcolor=None, overlay_color=ft.colors.RED_500)),
+    alignment=ft.Alignment(1, -1),
+    expand=True
+)
 
 edit_price = ft.IconButton(
     icon=ft.icons.EDIT_SQUARE,
@@ -72,4 +78,13 @@ dates_table = ft.DataTable(
             ],
         )
     ]
+)
+
+home_page_admin = ft.Container(
+    content=ft.Row(
+        controls=[
+            dates_table,
+            log_out
+        ]
+    )
 )
