@@ -1,17 +1,31 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #212121;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    /* Ajusta la altura al 100% de la ventana */
+}
+
+header {
+    background-color: #0e0e0e;
+    padding: 4px 0px 4px 30px;
+    color: #fff;
+    text-align:left;
+}
+
+h1 a {
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .container {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .logout {
