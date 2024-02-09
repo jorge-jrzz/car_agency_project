@@ -1,9 +1,9 @@
 import flet as ft
-from pages.sign_in import sign_in
-from pages.sign_up import sign_up
-from pages.home_page_client import home_page_client, from_car, date_picker, time_picker, buttons_schedule
-from pages.home_page_admin import home_page_admin, give_price, edit_price
-from pages.home_page_secretary import home_page_secretary, give_status, edit_status
+from view.sign_in import sign_in, form1, form2
+from view.sign_up import sign_up
+from view.home_page_client import home_page_client, from_car, date_picker, time_picker, buttons_schedule
+from view.home_page_admin import home_page_admin, give_price, edit_price
+from view.home_page_secretary import home_page_secretary, give_status, edit_status
 
 
 def main(page: ft.Page):
@@ -34,6 +34,17 @@ def main(page: ft.Page):
             page.clean()
             page.add(home_page_client)
             page.update()
+
+
+# Cambia el formulario de inicio de sesion
+
+    def change_from(e):
+        operator = sign_in.content.controls[1].content.controls[0].content.controls[1].value
+        if operator is True:
+            sign_in.content.controls[1] = form2
+        else:
+            sign_in.content.controls[1] = form1
+        page.update()
 
 
 # Carga la pagina para registrarse
@@ -116,6 +127,9 @@ def main(page: ft.Page):
 
 # Interaccion con la aplicacion completa sin necesidad de la BD
     sign_in.content.controls[1].content.controls[2].content.on_click = god
+
+# Cambio entre los formularios de inicio de sesion
+    sign_in.content.controls[1].content.controls[0].content.controls[1].on_change = change_from
 
 # Cambio entre las paginas de registro e iniciar secion
     sign_in.content.controls[1].content.controls[4].content.on_click = register
