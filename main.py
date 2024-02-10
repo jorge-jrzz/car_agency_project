@@ -10,30 +10,48 @@ def main(page: ft.Page):
     page.title = "Proyecto final"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.theme_mode = ft.ThemeMode.LIGHT
-    page.window_full_screen = True
+    # page.window_full_screen = True
+
+    operator = False
 
     def god(e):
-        user = sign_in.content.controls[1].content.controls[0].value
-        password = sign_in.content.controls[1].content.controls[1].value
-        admin = sign_in.content.controls[1].content.controls[3].content.controls[1].value
+        operator = sign_in.content.controls[1].content.controls[0].content.controls[1].value
+        # form = True if form == "Operador" else False
 
-        door_a = user == "admin" and password == "pass"
-        door_s = user == "secretary" and password == "pass"
+        user = sign_in.content.controls[1].content.controls[1].value
+        password = sign_in.content.controls[1].content.controls[2].value
 
-        if door_a and admin:
-            page.clean()
-            page.vertical_alignment = ft.MainAxisAlignment.NONE
-            page.add(home_page_admin)
-            page.update()
-        elif door_s and admin:
-            page.clean()
-            page.vertical_alignment = ft.MainAxisAlignment.NONE
-            page.add(home_page_secretary)
-            page.update()
-        elif door_a:
-            page.clean()
-            page.add(home_page_client)
-            page.update()
+        if operator is False:
+            # type_user = sign_in.content.controls[1].content.controls[0].content.controls[1].value
+            type_user = "Operador"
+            print(type_user)
+            print(user)
+            print(password)
+        else:
+            type_user = "Gestión"
+            type_user2 = sign_in.content.controls[1].content.controls[3].content.controls[1].value
+            print(type_user)
+            print(type_user2)
+            print(user)
+            print(password)
+
+        # door_a = user == "admin" and password == "pass"
+        # door_s = user == "secretary" and password == "pass"
+
+        # if door_a and admin:
+        #     page.clean()
+        #     page.vertical_alignment = ft.MainAxisAlignment.NONE
+        #     page.add(home_page_admin)
+        #     page.update()
+        # elif door_s and admin:
+        #     page.clean()
+        #     page.vertical_alignment = ft.MainAxisAlignment.NONE
+        #     page.add(home_page_secretary)
+        #     page.update()
+        # elif door_a:
+        #     page.clean()
+        #     page.add(home_page_client)
+        #     page.update()
 
 
 # Cambia el formulario de inicio de sesion
@@ -126,7 +144,10 @@ def main(page: ft.Page):
         page.update()
 
 # Interaccion con la aplicacion completa sin necesidad de la BD
-    sign_in.content.controls[1].content.controls[2].content.on_click = god
+    if operator is False:
+        sign_in.content.controls[1].content.controls[3].content.on_click = god
+    else:
+        sign_in.content.controls[1].content.controls[4].content.on_click = god
 
 # Cambio entre los formularios de inicio de sesion
     sign_in.content.controls[1].content.controls[0].content.controls[1].on_change = change_from
