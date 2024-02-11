@@ -78,11 +78,11 @@ buttom_submit = ft.Container(
     alignment=ft.Alignment(0, 0),
 )
 
-new_user = ft.Container(
-    ft.TextButton(text="Crea una cuenta", style=ft.ButtonStyle(
-        color="black", bgcolor=None, overlay_color="#C0BEC6")),
-    alignment=ft.Alignment(0, 0),
-)
+# new_user = ft.Container(
+#     ft.TextButton(text="Crea una cuenta", style=ft.ButtonStyle(
+#         color="black", bgcolor=None, overlay_color="#C0BEC6")),
+#     alignment=ft.Alignment(0, 0),
+# )
 
 form1 = ft.Container(
     content=ft.Column(
@@ -93,13 +93,13 @@ form1 = ft.Container(
             ft.TextField(label="Password ola", password=True,
                          can_reveal_password=True, icon=ft.icons.PASSWORD_ROUNDED),
             buttom_submit,
-            new_user
+            # new_user
         ],
         spacing=30
     ),
     bgcolor="#DBDFE6",
     width=360,
-    height=370,
+    height=350,
     padding=ft.padding.all(25),
     border_radius=10,
 )
@@ -114,13 +114,13 @@ form2 = ft.Container(
                          can_reveal_password=True, icon=ft.icons.PASSWORD_ROUNDED),
             manager_or_admin,
             buttom_submit,
-            new_user
+            # new_user
         ],
         spacing=30
     ),
     bgcolor="#DBDFE6",
     width=360,
-    height=450,
+    height=400,
     padding=ft.padding.all(25),
     border_radius=10,
 )

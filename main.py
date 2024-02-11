@@ -1,6 +1,5 @@
 import flet as ft
 from view.sign_in import sign_in, form1, form2
-from view.sign_up import sign_up
 from view.home_page_client import home_page_client, from_car, date_picker, time_picker, buttons_schedule
 from view.home_page_admin import home_page_admin, give_price, edit_price
 from view.home_page_secretary import home_page_secretary, give_status, edit_status
@@ -62,15 +61,6 @@ def main(page: ft.Page):
             sign_in.content.controls[1] = form2
         else:
             sign_in.content.controls[1] = form1
-        page.update()
-
-
-# Carga la pagina para registrarse
-
-    def register(e):
-        page.clean()
-        page.vertical_alignment = ft.MainAxisAlignment.NONE
-        page.add(sign_up)
         page.update()
 
 
@@ -152,9 +142,6 @@ def main(page: ft.Page):
 # Cambio entre los formularios de inicio de sesion
     sign_in.content.controls[1].content.controls[0].content.controls[1].on_change = change_from
 
-# Cambio entre las paginas de registro e iniciar secion
-    sign_in.content.controls[1].content.controls[4].content.on_click = register
-    sign_up.content.controls[0].content.controls[0].on_click = identify
 
 # Cambio entre el formulario de agregar un carro al usuario y egendar una cita para servicio (home page client)
     home_page_client.content.controls[0].on_change = add_car
