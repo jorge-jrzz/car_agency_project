@@ -1,4 +1,3 @@
-from datetime import datetime, timedelta
 import os.path
 
 from google.auth.transport.requests import Request
@@ -12,15 +11,15 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 TOKEN_PICKLE = 'token.pickle'
 
 
-def test(date, time):
-    start_datetieme = f"{date}T{time}-06:00"
-    init_hour = datetime.combine(
-        datetime.strptime(date, "%Y-%m-%d"), datetime.strptime(time, "%H:%M:%S").time())
-    modified_time = init_hour + timedelta(minutes=90)
-    modified_time_str = modified_time.strftime("%H:%M:%S")
-    end_datetime = f"{date}T{modified_time_str}-06:00"
-    print("start", start_datetieme)
-    print("end", end_datetime)
+# def test(date, time):
+#     start_datetieme = f"{date}T{time}-06:00"
+#     init_hour = datetime.combine(
+#         datetime.strptime(date, "%Y-%m-%d"), datetime.strptime(time, "%H:%M:%S").time())
+#     modified_time = init_hour + timedelta(minutes=90)
+#     modified_time_str = modified_time.strftime("%H:%M:%S")
+#     end_datetime = f"{date}T{modified_time_str}-06:00"
+#     print("start", start_datetieme)
+#     print("end", end_datetime)
 
 
 def authenticate_google_calendar():
@@ -46,16 +45,7 @@ def authenticate_google_calendar():
     return creds
 
 
-def create_event(date, time):
-
-    # Convertir la fecha y la hora en cadena para el formato de fecha y hora de Google Calendar
-    start_datetieme = f"{date}T{time}-06:00"
-    init_hour = datetime.combine(
-        datetime.strptime(date, "%Y-%m-%d"), datetime.strptime(time, "%H:%M:%S").time())
-    modified_time = init_hour + timedelta(minutes=90)
-    modified_time_str = modified_time.strftime("%H:%M:%S")
-    end_datetime = f"{date}T{modified_time_str}-06:00"
-
+def create_event(event):
     try:
         # Autenticar y obtener las credenciales
         creds = authenticate_google_calendar()
@@ -63,36 +53,53 @@ def create_event(date, time):
         service = build("calendar", "v3", credentials=creds)
 
         # Crear un evento
-        event = {
-            'summary': 'Evento creado desde Python',
-            'location': 'Universidad Autónoma Metropolitana Unidad Cuajimalpa, Vasco de Quiroga 4871, Contadero, Cuajimalpa de Morelos, 05348 Ciudad de México, CDMX, México',
-            'description': 'A chance to hear more about Google\'s developer products.',
-            'start': {
-                'dateTime': start_datetieme,
-                'timeZone': 'America/Mexico_City',
-            },
-            'end': {
-                'dateTime': end_datetime,
-                'timeZone': 'America/Mexico_City',
-            },
-            'attendees': [
-                {'email': 'eduardo.glez7828@gmail.com'},
-            ],
-            'reminders': {
-                'useDefault': False,
-                'overrides': [
-                    {'method': 'email', 'minutes': 24 * 60},
-                    {'method': 'popup', 'minutes': 10},
-                ],
-            },
-        }
-
-        event = service.events().insert(calendarId='primary', body=event).execute()
-        print(f'Evento creado: {event.get("htmlLink")}')
+        cita = service.events().insert(calendarId='primary', body=event).execute()
+        print(f'Evento creado: {cita.get("htmlLink")}')
 
     except HttpError as error:
         print(f"An error occurred: {error}")
 
 
-if __name__ == '__main__':
-    create_event()
+# def create_event(date, time):
+
+#     # Convertir la fecha y la hora en cadena para el formato de fecha y hora de Google Calendar
+#     start_datetieme = f"{date}T{time}-06:00"
+#     init_hour = datetime.combine(
+#         datetime.strptime(date, "%Y-%m-%d"), datetime.strptime(time, "%H:%M:%S").time())
+#     modified_time = init_hour + timedelta(minutes=90)
+#     modified_time_str = modified_time.strftime("%H:%M:%S")
+#     end_datetime = f"{date}T{modified_time_str}-06:00"
+
+#     try:
+#         # Autenticar y obtener las credenciales
+#         creds = authenticate_google_calendar()
+
+#         service = build("calendar", "v3", credentials=creds)
+
+#         # Crear un evento
+#         event = {
+#             'summary': 'Evento creado desde Python',
+#             'location': 'Universidad Autónoma Metropolitana Unidad Cuajimalpa, Vasco de Quiroga 4871, Contadero, Cuajimalpa de Morelos, 05348 Ciudad de México, CDMX, México',
+#             'description': 'A chance to hear more about Google\'s developer products.',
+#             'start': {
+#                 'dateTime': start_datetieme,
+#                 'timeZone': 'America/Mexico_City',
+#             },
+#             'end': {
+#                 'dateTime': end_datetime,
+#                 'timeZone': 'America/Mexico_City',
+#             },
+#             'attendees': [
+#                 {'email': 'eduardo.glez7828@gmail.com'},
+#             ],
+#         }
+
+#         event = service.events().insert(calendarId='primary', body=event).execute()
+#         print(f'Evento creado: {event.get("htmlLink")}')
+
+#     except HttpError as error:
+#         print(f"An error occurred: {error}")
+
+
+# if __name__ == '__main__':
+#     create_event()
