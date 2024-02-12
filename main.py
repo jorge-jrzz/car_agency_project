@@ -177,27 +177,28 @@ def main(page: ft.Page):
     page.overlay.append(time_picker)
 
     page.add(
-        ft.ResponsiveRow(
-            controls=[
-                home_page_operator.log_out,
-                ft.Container(
-                    home_page_operator.carta,
-                    col={"sm": 6, "md": 6, "xl": 4},
-                ),
-                ft.Container(
-                    home_page_operator.carta,
-                    col={"sm": 6, "md": 6, "xl": 4},
-                ),
-                ft.Container(
-                    home_page_operator.carta,
-                    col={"sm": 6, "md": 6, "xl": 4},
-                ),
-                ft.Container(
-                    home_page_operator.carta,
-                    col={"sm": 6, "md": 6, "xl": 4},
-                )
-            ]
-        )
+        sign_in
+        # ft.ResponsiveRow(
+        #     controls=[
+        #         home_page_operator.log_out,
+        #         ft.Container(
+        #             home_page_operator.carta,
+        #             col={"sm": 6, "md": 6, "xl": 4},
+        #         ),
+        #         ft.Container(
+        #             home_page_operator.carta,
+        #             col={"sm": 6, "md": 6, "xl": 4},
+        #         ),
+        #         ft.Container(
+        #             home_page_operator.carta,
+        #             col={"sm": 6, "md": 6, "xl": 4},
+        #         ),
+        #         ft.Container(
+        #             home_page_operator.carta,
+        #             col={"sm": 6, "md": 6, "xl": 4},
+        #         )
+        #     ]
+        # )
     )
 
     # def page_resize(e):
