@@ -9,6 +9,30 @@ def main(page):
     page.window_width = 1125
     page.window_height = 630
 
+    def close_dlg(e):
+        call_number.open = False
+        page.update()
+
+    call_number = ft.AlertDialog(
+        modal=True,
+        title=ft.Text("5513076942"),
+        content=ft.Text("Cliente: Jorge Juarez"),
+        actions=[
+            ft.TextButton("Regresar", on_click=close_dlg)
+        ]
+    )
+
+    def open_number_call(e):
+        page.dialog = call_number
+        call_number.open = True
+        page.update()
+
+    call_button = ft.ElevatedButton(
+        "Llamar",
+        icon=ft.icons.PHONE,
+        on_click=open_number_call
+    )
+
     def change_date(e):
         date = date_picker.value.strftime("%Y-%m-%d")
         # print(f"Date picker changed, value is {date}")
@@ -20,7 +44,7 @@ def main(page):
         date = date_picker.value.strftime("%Y-%m-%d")
         print(f"Date picker changed, value is {date}")
         print(f"Date picker dismissed, value is {time}")
-        event.create_event(date, time)
+        # event.create_event(date, time)
 
     log_out = ft.Container(
         content=ft.TextButton(text="Cerrar sesión", style=ft.ButtonStyle(
@@ -30,7 +54,7 @@ def main(page):
     )
 
     date_button = ft.ElevatedButton(
-        "Agenar",
+        "Agendar",
         icon=ft.icons.EDIT_CALENDAR,
         on_click=lambda _: date_picker.pick_date(),
     )
@@ -52,6 +76,28 @@ def main(page):
         on_dismiss=lambda _: date_picker.pick_date(),
     )
 
+    def change_color(e):
+        if dropdown_status.value == "Pendiente":
+            carta.color = "blue"
+        elif dropdown_status.value == "Atendido":
+            carta.color = "red"
+
+        # print(type(e))
+        # carta.key = "card"
+        page.update()
+
+    # dropdown_status = ft.Ref[
+    dropdown_status = ft.Dropdown(
+        label="Estatus",
+        options=[
+            ft.dropdown.Option("Pendiente"),
+            ft.dropdown.Option("Atendido"),
+        ],
+        width=200,
+        on_change=change_color
+    )
+
+    # carta = ft.Ref[
     carta = ft.Card(
         content=ft.Container(
             content=ft.Column(
@@ -66,15 +112,8 @@ def main(page):
                     ),
                     ft.Row(
                         controls=[
-                            ft.TextButton("Lammar"),
-                            ft.Dropdown(
-                                label="Estatus",
-                                options=[
-                                    ft.dropdown.Option("Pendiente"),
-                                    ft.dropdown.Option("Atendido"),
-                                ],
-                                width=200
-                            ),
+                            call_button,
+                            dropdown_status,
                             date_button,
                         ],
                         alignment=ft.MainAxisAlignment.END,
@@ -86,8 +125,61 @@ def main(page):
         )
     )
 
+    # carta.key = "pedro"
+
+    carta2 = ft.Card(
+        content=ft.Container(
+            content=ft.Column(
+                [
+                    ft.ListTile(
+                        leading=ft.Icon(ft.icons.ALBUM),
+                        title=ft.Text("The Enchanted Nightingale"),
+                        subtitle=ft.Text(
+                            "Music by Julie Gable. Lyrics by Sidney Stein."
+                        ),
+                    ),
+                    ft.Row(
+                        [ft.TextButton("Buy tickets"),
+                         ft.TextButton("Listen")],
+                        alignment=ft.MainAxisAlignment.END,
+                    ),
+                ]
+            ),
+            width=400,
+            padding=10,
+        )
+    )
+
     page.overlay.append(date_picker)
     page.overlay.append(time_picker)
+    # page.add(ft.Card(ref=carta,
+    #                  content=ft.Container(
+    #                      content=ft.Column(
+    #                          [
+    #                              ft.ListTile(
+    #                                  leading=ft.Icon(
+    #                                      ft.icons.CALENDAR_MONTH),
+    #                                  title=ft.Text("Jorge Juarez"),
+    #                                  subtitle=ft.Column([
+    #                                      ft.Text(
+    #                                          "Chevrolet, Aveo 2019, Rojo, Gasolina"),
+    #                                      ft.Text("$ 300,000.00"),
+    #                                  ])
+    #                              ),
+    #                              ft.Row(
+    #                                  controls=[
+    #                                      call_button,
+    #                                      dropdown_status,
+    #                                      date_button,
+    #                                  ],
+    #                                  alignment=ft.MainAxisAlignment.END,
+    #                              ),
+    #                          ]
+    #                      ),
+    #                      width=400,
+    #                      padding=10,
+    #                  )
+    #                  ))
 
     page.add(
         ft.ResponsiveRow(
@@ -95,20 +187,48 @@ def main(page):
                 log_out,
                 ft.Container(
                     carta,
+                    # ft.Card(ref=carta,
+                    #         content=ft.Container(
+                    #             content=ft.Column(
+                    #                 [
+                    #                     ft.ListTile(
+                    #                         leading=ft.Icon(
+                    #                             ft.icons.CALENDAR_MONTH),
+                    #                         title=ft.Text("Jorge Juarez"),
+                    #                         subtitle=ft.Column([
+                    #                             ft.Text(
+                    #                                 "Chevrolet, Aveo 2019, Rojo, Gasolina"),
+                    #                             ft.Text("$ 300,000.00"),
+                    #                         ])
+                    #                     ),
+                    #                     ft.Row(
+                    #                         controls=[
+                    #                             call_button,
+                    #                             dropdown_status,
+                    #                             date_button,
+                    #                         ],
+                    #                         alignment=ft.MainAxisAlignment.END,
+                    #                     ),
+                    #                 ]
+                    #             ),
+                    #             width=400,
+                    #             padding=10,
+                    #         )
+                    #         ),
                     col={"sm": 6, "md": 6, "xl": 4},
                 ),
                 ft.Container(
                     carta,
                     col={"sm": 6, "md": 6, "xl": 4},
                 ),
-                ft.Container(
-                    carta,
-                    col={"sm": 6, "md": 6, "xl": 4},
-                ),
-                ft.Container(
-                    carta,
-                    col={"sm": 6, "md": 6, "xl": 4},
-                )
+                # ft.Container(
+                #     carta2,
+                #     col={"sm": 6, "md": 6, "xl": 4},
+                # ),
+                # ft.Container(
+                #     carta,
+                #     col={"sm": 6, "md": 6, "xl": 4},
+                # )
             ]
         )
     )

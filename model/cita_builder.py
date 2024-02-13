@@ -70,13 +70,13 @@ class Cita:
 
 
 # Ejemplo de uso:
-cliente_nombre = "Pedro Pérez"
+cliente_nombre = "Juancho Pancho"
 builder = CitaBuilder(cliente_nombre)
 cita = (
     builder
-    .add_description("Datos del Carro del Cliente")
-    .add_cost(100)
-    .add_start_datetime("2024-02-15", "09:30:00")
+    .add_description("Nissan Tsuru 2005")
+    .add_cost(2003.50)
+    .add_start_datetime("2024-02-18", "12:30:00")
     .add_attendee("correo@cliente.com")
     .build()
 )
