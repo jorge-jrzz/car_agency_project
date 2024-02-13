@@ -1,6 +1,6 @@
 import flet as ft
 from view.sign_in import sign_in, form1, form2
-from view.home_page_client import home_page_client, from_car, date_picker, time_picker, buttons_schedule
+from view.home_page_manager import home_page_client, from_car, date_picker, time_picker, buttons_schedule
 from view.home_page_admin import home_page_admin, give_price, edit_price
 import view.home_page_operator as home_page_operator
 

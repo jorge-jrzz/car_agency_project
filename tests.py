@@ -76,10 +76,15 @@ def main(page):
         on_dismiss=lambda _: date_picker.pick_date(),
     )
 
-    def change_color(e):
-        if dropdown_status.value == "Pendiente":
+    def change_color(carta, valor):
+        # if dropdown_status.value == "Pendiente":
+        #     carta.color = "blue"
+        # elif dropdown_status.value == "Atendido":
+        #     carta.color = "red"
+
+        if valor == "Pendiente":
             carta.color = "blue"
-        elif dropdown_status.value == "Atendido":
+        elif valor == "Atendido":
             carta.color = "red"
 
         # print(type(e))
@@ -99,6 +104,7 @@ def main(page):
 
     # carta = ft.Ref[
     carta = ft.Card(
+        # color="blue",
         content=ft.Container(
             content=ft.Column(
                 [
@@ -113,11 +119,21 @@ def main(page):
                     ft.Row(
                         controls=[
                             call_button,
-                            dropdown_status,
+                            ft.Dropdown(
+                                value="Pendiente",
+                                label="Estatus",
+                                options=[
+                                    ft.dropdown.Option("Pendiente"),
+                                    ft.dropdown.Option("Atendido"),
+                                ],
+                                width=200,
+                                # on_change=lambda _: change_color(carta.content.content.controls[1].controls[1].value)
+                                # on_change=lambda _: carta.color = "blue" if carta.content.content.controls[1].controls[1].value == "Pendiente" else carta.color ="red"
+                            ),
                             date_button,
                         ],
                         alignment=ft.MainAxisAlignment.END,
-                    ),
+                    )
                 ]
             ),
             width=400,
