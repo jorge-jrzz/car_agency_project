@@ -1,26 +1,5 @@
 import flet as ft
 
-
-login = {"user": "", "password": ""}
-admin = False
-
-
-def sesion(e):
-
-    global login
-    global admin
-
-    user = form.content.controls[0].value
-    password = form.content.controls[1].value
-    admin = form.content.controls[3].content.controls[1].value
-
-    if user != "" and password != "":
-        login["user"] = user
-        login["password"] = password
-        print(login)
-        print(admin)
-
-
 title = ft.Container(
     content=ft.Text("Inicio de sesión",
                     theme_style=ft.TextThemeStyle.TITLE_LARGE, size=28),
@@ -78,11 +57,15 @@ buttom_submit = ft.Container(
     alignment=ft.Alignment(0, 0),
 )
 
-# new_user = ft.Container(
-#     ft.TextButton(text="Crea una cuenta", style=ft.ButtonStyle(
-#         color="black", bgcolor=None, overlay_color="#C0BEC6")),
-#     alignment=ft.Alignment(0, 0),
-# )
+
+def change_from(e, page):
+    operator = sign_in.content.controls[1].content.controls[0].content.controls[1].value
+    if operator is True:
+        sign_in.content.controls[1] = form2
+    else:
+        sign_in.content.controls[1] = form1
+    page.update()
+
 
 form1 = ft.Container(
     content=ft.Column(
@@ -93,7 +76,6 @@ form1 = ft.Container(
             ft.TextField(label="Password ola", password=True,
                          can_reveal_password=True, icon=ft.icons.PASSWORD_ROUNDED),
             buttom_submit,
-            # new_user
         ],
         spacing=30
     ),
@@ -114,7 +96,6 @@ form2 = ft.Container(
                          can_reveal_password=True, icon=ft.icons.PASSWORD_ROUNDED),
             manager_or_admin,
             buttom_submit,
-            # new_user
         ],
         spacing=30
     ),
@@ -124,8 +105,6 @@ form2 = ft.Container(
     padding=ft.padding.all(25),
     border_radius=10,
 )
-
-form = form1
 
 sign_in = ft.Container(
     alignment=ft.Alignment(0, 0),
