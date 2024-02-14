@@ -1,8 +1,10 @@
 import sqlite3
+from datetime import datetime, timedelta
 
 
 class DatabaseSingleton:
     _instance = None
+    database_file = "db/database.db"
 
     def __new__(cls, database_file="db/database.db"):
         if not cls._instance:
@@ -11,7 +13,7 @@ class DatabaseSingleton:
         return cls._instance
 
     def get_connection(self):
-        return self.connection
+        return sqlite3.connect(self.database_file)
 
 
 def autenticar_usuario(username, password, rol):
@@ -38,9 +40,32 @@ def autenticar_usuario(username, password, rol):
         return False
 
 
-# Ejemplo de uso para autenticar a un usuario
-usuario = "RaulAdm"
-contrasena = "admin2345"
-rol = "administrador"
+def dates_6_months_ago():
+    db_instance = DatabaseSingleton()
 
-autenticar_usuario(usuario, contrasena, rol)
+    connection = db_instance.get_connection()
+
+    # Calcular la fecha de hace 6 meses desde hoy
+    fecha_hace_6_meses = datetime.now() - timedelta(days=182)
+
+    # Ejecutar la consulta SQL para obtener clientes con su última cita hace 6 meses
+    query = "SELECT * FROM clientes WHERE UltimaCita <= ?;"
+    cursor = connection.cursor()
+    cursor.execute(query, (fecha_hace_6_meses.strftime('%Y-%m-%d'),))
+    # resultados = cursor.fetchall()
+
+    column_names = [description[0] for description in cursor.description]
+
+    resultados = [dict(zip(column_names, row)) for row in cursor.fetchall()]
+
+    return resultados
+
+
+# # Ejemplo de uso
+# clientes_ultima_cita_hace_6_meses = dates_6_months_ago()
+
+# print(type(clientes_ultima_cita_hace_6_meses))
+
+# # Imprimir resultados
+# for cliente in clientes_ultima_cita_hace_6_meses:
+#     print(cliente)
