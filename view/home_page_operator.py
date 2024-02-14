@@ -1,6 +1,5 @@
 import flet as ft
 import datetime
-import event
 from model.db import dates_6_months_ago
 from model import event
 from model import *
