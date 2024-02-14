@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
 from pprint import pprint
-import event
 
 
 class CitaBuilder:
@@ -70,19 +69,19 @@ class Cita:
 
 
 # Ejemplo de uso:
-cliente_nombre = "Juancho Pancho"
-builder = CitaBuilder(cliente_nombre)
-cita = (
-    builder
-    .add_description("Nissan Tsuru 2005")
-    .add_cost(2003.50)
-    .add_start_datetime("2024-02-18", "12:30:00")
-    .add_attendee("correo@cliente.com")
-    .build()
-)
+# cliente_nombre = "Juancho Pancho"
+# builder = CitaBuilder(cliente_nombre)
+# cita = (
+#     builder
+#     .add_description("Nissan Tsuru 2005")
+#     .add_cost(2003.50)
+#     .add_start_datetime("2024-02-18", "12:30:00")
+#     .add_attendee("correo@cliente.com")
+#     .build()
+# )
 
-body_date = cita.to_dict_for_calendar()
+# body_date = cita.to_dict_for_calendar()
 
-pprint(body_date)
+# pprint(body_date)
 
-event.create_event(body_date)
+# event.create_event(body_date)

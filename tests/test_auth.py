@@ -1,5 +1,6 @@
 import unittest
-from auth import login
+from tests.auth import login
+
 
 class TestAuth(unittest.TestCase):
 
@@ -14,7 +15,7 @@ class TestAuth(unittest.TestCase):
     # def test_login_success(self):
     #     # Simula un inicio de sesión exitoso
     #     self.assertEqual(login("RaulAdm", "admin2345", "administrador"), "administrador")
-    
+
     # def test_login_failure(self):
     #     # Simula un inicio de sesión fallido
     #     self.assertIsNone(login("Raul", "admin2345", "administrador"))
