@@ -73,7 +73,7 @@ form1 = ft.Container(
             operator_or_management,
             ft.TextField(label="Username o Email",
                          icon=ft.icons.PERSON_ROUNDED),
-            ft.TextField(label="Password ola", password=True,
+            ft.TextField(label="Password", password=True,
                          can_reveal_password=True, icon=ft.icons.PASSWORD_ROUNDED),
             buttom_submit,
         ],

@@ -19,6 +19,7 @@ def operator(page: ft.Page):
     page.title = "Operador"
     page.window_width = 1175
     page.window_height = 640
+    page.scroll = ft.ScrollMode.ALWAYS
     page.window_center()
 
 # Boton para cerrar sesion

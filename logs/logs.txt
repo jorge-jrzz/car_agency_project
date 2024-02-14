@@ -173,3 +173,114 @@
 2024-02-14 01:48:48,045 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
 2024-02-14 01:48:48,309 - INFO - Session started: 
 2024-02-14 01:48:56,471 - INFO - file_cache is only supported with oauth2client<4.0.0
+2024-02-14 14:58:26,871 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 14:58:26,872 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/sWveFpmPrA
+2024-02-14 14:58:26,872 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/sWveFpmPrA
+2024-02-14 14:58:26,872 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 14:58:26,872 - INFO - Starting Flet View app...
+2024-02-14 14:58:26,872 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 14:58:27,127 - INFO - Session started: 
+2024-02-14 14:59:26,722 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 14:59:26,722 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/qDLBxePFMn
+2024-02-14 14:59:26,722 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/qDLBxePFMn
+2024-02-14 14:59:26,722 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 14:59:26,722 - INFO - Starting Flet View app...
+2024-02-14 14:59:26,722 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 14:59:26,956 - INFO - Session started: 
+2024-02-14 15:00:58,960 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:00:58,960 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/azvcfOToDp
+2024-02-14 15:00:58,960 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/azvcfOToDp
+2024-02-14 15:00:58,960 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:00:58,960 - INFO - Starting Flet View app...
+2024-02-14 15:00:58,960 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:00:59,199 - INFO - Session started: 
+2024-02-14 15:04:44,388 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:04:44,389 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/wPGqGSXWwi
+2024-02-14 15:04:44,389 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/wPGqGSXWwi
+2024-02-14 15:04:44,389 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:04:44,389 - INFO - Starting Flet View app...
+2024-02-14 15:04:44,389 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:04:44,644 - INFO - Session started: 
+2024-02-14 15:08:27,096 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:08:27,096 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/AZgShimhpV
+2024-02-14 15:08:27,096 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/AZgShimhpV
+2024-02-14 15:08:27,096 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:08:27,096 - INFO - Starting Flet View app...
+2024-02-14 15:08:27,096 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:08:27,337 - INFO - Session started: 
+2024-02-14 15:14:23,864 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:14:23,864 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/GulxREIJlg
+2024-02-14 15:14:23,864 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/GulxREIJlg
+2024-02-14 15:14:23,864 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:14:23,864 - INFO - Starting Flet View app...
+2024-02-14 15:14:23,864 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:14:24,105 - INFO - Session started: 
+2024-02-14 15:14:46,998 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:14:46,998 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/RklVcEChEf
+2024-02-14 15:14:46,998 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/RklVcEChEf
+2024-02-14 15:14:46,998 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:14:46,999 - INFO - Starting Flet View app...
+2024-02-14 15:14:46,999 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:14:47,216 - INFO - Session started: 
+2024-02-14 15:19:37,095 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:19:37,095 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/LmrgtRaWBV
+2024-02-14 15:19:37,095 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/LmrgtRaWBV
+2024-02-14 15:19:37,095 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:19:37,095 - INFO - Starting Flet View app...
+2024-02-14 15:19:37,095 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:19:37,340 - INFO - Session started: 
+2024-02-14 15:20:02,049 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:20:02,050 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/KuEnBoCjkc
+2024-02-14 15:20:02,050 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/KuEnBoCjkc
+2024-02-14 15:20:02,050 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:20:02,050 - INFO - Starting Flet View app...
+2024-02-14 15:20:02,050 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:20:02,270 - INFO - Session started: 
+2024-02-14 15:38:04,710 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:38:04,711 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/rAEOoqACzy
+2024-02-14 15:38:04,711 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/rAEOoqACzy
+2024-02-14 15:38:04,711 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:38:04,711 - INFO - Starting Flet View app...
+2024-02-14 15:38:04,711 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:38:04,969 - INFO - Session started: 
+2024-02-14 15:38:11,569 - WARNING - Inicio de sesion fallido: Usuario - jhjhh, Rol - secretaria
+2024-02-14 15:38:30,518 - INFO - Inicio de sesion exitoso: Usuario - SarahR, Rol - secretaria
+2024-02-14 15:38:30,521 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:38:30,522 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/VuZgYnDkzR
+2024-02-14 15:38:30,522 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/VuZgYnDkzR
+2024-02-14 15:38:30,523 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:38:30,523 - INFO - Starting Flet View app...
+2024-02-14 15:38:30,523 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:38:30,793 - INFO - Session started: 
+2024-02-14 15:39:40,448 - INFO - file_cache is only supported with oauth2client<4.0.0
+2024-02-14 15:41:37,902 - INFO - Inicio de sesion exitoso: Usuario - TavoGer, Rol - gerente
+2024-02-14 15:41:58,550 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:41:58,551 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/XHSwySlVcT
+2024-02-14 15:41:58,551 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/XHSwySlVcT
+2024-02-14 15:41:58,551 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:41:58,551 - INFO - Starting Flet View app...
+2024-02-14 15:41:58,551 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:41:58,806 - INFO - Session started: 
+2024-02-14 15:42:20,820 - INFO - Inicio de sesion exitoso: Usuario - RaulAdm, Rol - administrador
+2024-02-14 15:42:20,822 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:42:20,822 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/QBFJrRObgJ
+2024-02-14 15:42:20,823 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/QBFJrRObgJ
+2024-02-14 15:42:20,823 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:42:20,823 - INFO - Starting Flet View app...
+2024-02-14 15:42:20,823 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:42:21,088 - INFO - Session started: 
+2024-02-14 15:43:57,976 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:43:57,976 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/TMEmuLBiQu
+2024-02-14 15:43:57,976 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/TMEmuLBiQu
+2024-02-14 15:43:57,976 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:43:57,976 - INFO - Starting Flet View app...
+2024-02-14 15:43:57,976 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:43:58,211 - INFO - Session started: 
+2024-02-14 15:44:10,654 - INFO - Inicio de sesion exitoso: Usuario - RaulAdm, Rol - administrador
+2024-02-14 15:44:10,655 - INFO - Assets path configured: /Users/jorge-jrzz/Desktop/final_project/project-DSGE/assets
+2024-02-14 15:44:10,656 - INFO - Starting up UDS server on /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/rvbdbpQEKY
+2024-02-14 15:44:10,656 - INFO - App URL: /var/folders/hd/trxdw5rd3979k4jnndwdv1jh0000gn/T/rvbdbpQEKY
+2024-02-14 15:44:10,656 - INFO - Connected to Flet app and handling user sessions...
+2024-02-14 15:44:10,656 - INFO - Starting Flet View app...
+2024-02-14 15:44:10,657 - INFO - Flet View found in: /Users/jorge-jrzz/.flet/bin/flet-0.19.0
+2024-02-14 15:44:10,911 - INFO - Session started: 

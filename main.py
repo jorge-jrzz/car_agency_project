@@ -4,6 +4,7 @@ from model.db import autenticar_usuario
 from view.sign_in import operator_or_management, change_from, buttom_submit, sign_in
 from view.home_page_manager import chart, toggle_data, avg_button, container_ventas
 from view.home_page_operator import operator
+from view.home_page_admin import administrador
 
 # Configura el logger
 logging.basicConfig(level=logging.INFO, filename='logs/logs.txt',
@@ -45,9 +46,13 @@ def main(page: ft.Page):
         elif door is True and rol == "gerente":
             page.clean()
             page.add(avg_button, container_ventas)
+        elif door is True and rol == "administrador":
+            page.update()
+            ft.app(target=administrador)
 
     buttom_submit.content.on_click = login
     avg_button.on_click = lambda _: toggle_data(_, chart)
+
     page.add(sign_in)
 
 
