@@ -1,5 +1,6 @@
 import flet as ft
 import datetime
+import event
 from model.db import dates_6_months_ago
 from model import event
 from model import *
@@ -150,7 +151,7 @@ def operator(page: ft.Page):
             date = date_picker.value.strftime("%Y-%m-%d")
             print(f"Fecha seleccionada {date}")
             print(f"Hora selecionada {time}")
-            # event.create_event(date, time)
+            event.create_event(date, time)
 
         get_event_data.append(change_time)
 
