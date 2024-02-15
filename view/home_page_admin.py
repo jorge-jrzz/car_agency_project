@@ -3,12 +3,22 @@ from model.db import get_personal
 
 
 def administrador(page: ft.Page):
-    page.add()
+    page.title = "Administrador"
+    page.window_width = 815
+    page.window_height = 700
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.theme_mode = ft.ThemeMode.LIGHT
     page.scroll = ft.ScrollMode.ALWAYS
 
     personal = get_personal()
+
+# Boton para cerrar sesion
+    log_out = ft.ElevatedButton(
+        "Cerrar sesión",
+        icon=ft.icons.LOGOUT,
+        color="red",
+        on_click=lambda _: page.window_destroy()
+    )
 
     tabla = ft.DataTable(
         columns=[
@@ -31,7 +41,7 @@ def administrador(page: ft.Page):
         width=page.width  # Establecer el ancho de la tabla al ancho de la pantalla
     )
 
-    page.add(tabla)
+    page.add(log_out, tabla)
 
 
 if __name__ == "__main__":

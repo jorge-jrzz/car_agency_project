@@ -6,26 +6,27 @@ from model.cita_builder import CitaBuilder
 from model.event import create_event
 
 
-# Función para generar un costo de servicio aleatorio entre 1500 y 3500
-def generate_random_cost():
-    return random.randint(1500, 3500)
-
-
-# Obtener los clientes que han tenido una cita en los últimos 6 meses
-clientes = dates_6_months_ago()
-
-
 def operator(page: ft.Page):
     page.title = "Operador"
     page.window_width = 1175
     page.window_height = 640
+    page.theme_mode = ft.ThemeMode.LIGHT
     page.scroll = ft.ScrollMode.ALWAYS
     page.window_center()
+
+    # Función para generar un costo de servicio aleatorio entre 1500 y 3500
+    def generate_random_cost():
+        return random.randint(1500, 3500)
+
+    # Obtener los clientes que han tenido una cita en los últimos 6 meses
+    clientes = dates_6_months_ago()
+
 
 # Boton para cerrar sesion
     log_out = ft.ElevatedButton(
         "Cerrar sesión",
         icon=ft.icons.LOGOUT,
+        color="red",
         on_click=lambda _: page.window_destroy()
     )
 
@@ -80,25 +81,6 @@ def operator(page: ft.Page):
 # Asignar la función de abrir a cada botón
     for button in call_buttons:
         button.on_click = open_dialogs[call_buttons.index(button)]
-
-# Funciones para cambiar el color de las tarjetas dependiendo del estatus de la cita
-    # change_color_funtions = []
-    # for item, cliente in enumerate(clientes):
-    #     def change_color(e, item=item):
-    #         for tarjeta in cards_clients:
-    #             valor = tarjeta.content.content.controls[1].controls[1].value
-    #             print(valor)
-    #             if valor == "Atendido":
-    #                 print("hola?")
-    #                 tarjeta.content.color = "blue"
-    #                 tarjeta.update()
-    #                 break
-    #             elif tarjeta.content.key == item and valor == "Pendiente":
-    #                 tarjeta.content.color = "red"
-    #                 tarjeta.update()
-    #                 break
-
-    #     change_color_funtions.append(change_color)
 
 
 # Dropdowns para seleccionar el estatus de la cita
@@ -158,8 +140,6 @@ def operator(page: ft.Page):
     get_event_data = []
 
     for item, cliente in enumerate(clientes):
-        # nombre = cliente['name']
-        # print(f"Cliente: {clientes[item]['name']}")
 
         def change_time(e, time_picker=time_pickers[item], date_picker=date_pickers[item]):
             time = time_picker.value.strftime("%H:%M:%S")
@@ -209,28 +189,6 @@ def operator(page: ft.Page):
 
         change_date_funtions.append(change_date)
 
-# Añadir funcionalidad a los time pickers
-    # for picker, time in enumerate(time_pickers):
-    #     time_pickers[picker].on_change = lambda _, picker=picker: get_event_data[picker](
-    #         _, picker)
-
-    # date_picker = ft.DatePicker(
-    #     on_change=change_date,
-    #     confirm_text="Confirmar",
-    #     cancel_text="Cancelar",
-    #     first_date=datetime.datetime(2024, 1, 1),
-    #     last_date=datetime.datetime(2024, 12, 31),
-    # )
-
-    # time_picker = ft.TimePicker(
-    #     confirm_text="Confirmar",
-    #     cancel_text="Regresar",
-    #     error_invalid_text="Time out of range",
-    #     help_text="Pick your time slot",
-    #     on_change=lambda _: change_time(_, time_picker=time_picker,
-    #                                     date_picker=date_picker),
-    #     on_dismiss=lambda _: date_picker.pick_date(),
-    # )
 
 # Crear tarjetas para cada resultado
     cards_clients = []

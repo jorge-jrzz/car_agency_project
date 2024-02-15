@@ -2,7 +2,7 @@ import flet as ft
 import logging
 from model.db import autenticar_usuario
 from view.sign_in import operator_or_management, change_from, buttom_submit, sign_in
-from view.home_page_manager import chart, toggle_data, avg_button, container_ventas
+from view.home_page_manager import manager
 from view.home_page_operator import operator
 from view.home_page_admin import administrador
 
@@ -12,7 +12,9 @@ logging.basicConfig(level=logging.INFO, filename='logs/logs.txt',
 
 
 def main(page: ft.Page):
-    page.title = "Proyecto final"
+    page.title = "Agencia de Autos"
+    page.window_width = 845
+    page.window_height = 555
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.theme_mode = ft.ThemeMode.LIGHT
     page.window_center()
@@ -41,19 +43,16 @@ def main(page: ft.Page):
                 'Inicio de sesion fallido: Usuario - %s, Rol - %s', username, rol)
 
         if door is True and rol == "secretaria":
-            page.update()
             ft.app(target=operator)
         elif door is True and rol == "gerente":
-            page.clean()
-            page.add(avg_button, container_ventas)
+            ft.app(target=manager)
         elif door is True and rol == "administrador":
-            page.update()
             ft.app(target=administrador)
 
     buttom_submit.content.on_click = login
-    avg_button.on_click = lambda _: toggle_data(_, chart)
 
     page.add(sign_in)
 
 
-ft.app(target=main)
+if __name__ == "__main__":
+    ft.app(target=main)

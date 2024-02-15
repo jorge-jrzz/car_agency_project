@@ -11,17 +11,6 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 TOKEN_PICKLE = 'token.pickle'
 
 
-# def test(date, time):
-#     start_datetieme = f"{date}T{time}-06:00"
-#     init_hour = datetime.combine(
-#         datetime.strptime(date, "%Y-%m-%d"), datetime.strptime(time, "%H:%M:%S").time())
-#     modified_time = init_hour + timedelta(minutes=90)
-#     modified_time_str = modified_time.strftime("%H:%M:%S")
-#     end_datetime = f"{date}T{modified_time_str}-06:00"
-#     print("start", start_datetieme)
-#     print("end", end_datetime)
-
-
 def authenticate_google_calendar():
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is

@@ -22,7 +22,7 @@ class DatabaseSingleton:
     def close_connection(self):
         if self.connection:
             self.connection.close()
-            print("Conexión cerrada")
+            # print("Conexión cerrada")
 
     def __del__(self):
         self.close_connection()
@@ -68,11 +68,10 @@ def dates_6_months_ago():
     query = "SELECT * FROM clientes WHERE UltimaCita <= ?;"
     cursor = connection.cursor()
     cursor.execute(query, (fecha_hace_6_meses.strftime('%Y-%m-%d'),))
-    resultados = cursor.fetchall()
 
-    # column_names = [description[0] for description in cursor.description]
+    column_names = [description[0] for description in cursor.description]
 
-    # resultados = [dict(zip(column_names, row)) for row in cursor.fetchall()]
+    resultados = [dict(zip(column_names, row)) for row in cursor.fetchall()]
 
     db_instance.close_connection()
 

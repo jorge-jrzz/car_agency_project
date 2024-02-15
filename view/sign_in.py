@@ -20,7 +20,6 @@ operator_or_management = ft.Container(
                           ft.MaterialState.SELECTED: ft.icons.LOCK_PERSON,
                           ft.MaterialState.DEFAULT: ft.icons.CONTACT_PHONE
                       },
-                      #   on_change=change_from
                       ),
             ft.Text("Gestión", weight=ft.FontWeight.W_600)
         ],
@@ -52,7 +51,6 @@ manager_or_admin = ft.Container(
 
 buttom_submit = ft.Container(
     content=ft.ElevatedButton(
-        # text="Iniciar sesión", width=220, height=35, color="black", on_click=sesion),
         text="Iniciar sesión", width=220, height=35, color="black"),
     alignment=ft.Alignment(0, 0),
 )
