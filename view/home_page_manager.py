@@ -16,10 +16,10 @@ def average(datos):
 
 def manager(page: ft.Page):
     page.title = "Gerente"
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.window_width = 1060
     page.window_height = 525
     page.theme_mode = ft.ThemeMode.LIGHT
+    page.window_center()
 
     # Boton para cerrar sesion
     log_out = ft.ElevatedButton(

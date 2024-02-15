@@ -6,9 +6,9 @@ def administrador(page: ft.Page):
     page.title = "Administrador"
     page.window_width = 815
     page.window_height = 700
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.theme_mode = ft.ThemeMode.LIGHT
     page.scroll = ft.ScrollMode.ALWAYS
+    page.window_center()
 
     personal = get_personal()
 
